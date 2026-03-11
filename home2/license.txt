@@ -1,11 +1,11 @@
 Model Information:
-* title:	Mobile Home
-* source:	https://sketchfab.com/3d-models/mobile-home-16c9bb2715e544d59f4e9a03e0a5745e
-* author:	geevisual55 (https://sketchfab.com/geevisual55)
+* title:	tiny home
+* source:	https://sketchfab.com/3d-models/tiny-home-1215127998b3404c96077e1114bf1637
+* author:	Home Design 3D (https://sketchfab.com/homedesign3d)
 
 Model License:
-* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
-* requirements:	Author must be credited. Commercial use is allowed.
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
 
 If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
-This work is based on "Mobile Home" (https://sketchfab.com/3d-models/mobile-home-16c9bb2715e544d59f4e9a03e0a5745e) by geevisual55 (https://sketchfab.com/geevisual55) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+This work is based on "tiny home" (https://sketchfab.com/3d-models/tiny-home-1215127998b3404c96077e1114bf1637) by Home Design 3D (https://sketchfab.com/homedesign3d) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)

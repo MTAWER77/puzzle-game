@@ -1,0 +1,150 @@
+[gd_scene load_steps=9 format=3 uid="uid://fqief8t4bbid"]
+
+[ext_resource type="Script" uid="uid://dye8ljydlaxp2" path="res://scripts/player.gd" id="1_xo3ru"]
+[ext_resource type="FontFile" uid="uid://b7ad52m8t0ue5" path="res://lines/Fonts/otf/Petrona-BlackItalic.otf" id="2_hjaqi"]
+[ext_resource type="Texture2D" uid="uid://ckxuwajq3jfhm" path="res://images/white-crumpled-paper-texture-background_1373-162.jpg" id="3_fvtld"]
+[ext_resource type="FontFile" uid="uid://bwdlylnh3k1d2" path="res://lines/Fonts/otf/Petrona-Bold.otf" id="4_ct4mp"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4qnqm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xo3ru"]
+radius = 0.2
+
+[sub_resource type="LabelSettings" id="LabelSettings_xo3ru"]
+font = ExtResource("2_hjaqi")
+font_size = 30
+outline_size = 7
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_color = Color(0.4627451, 0.77254903, 0.4627451, 0)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fvtld"]
+font = ExtResource("4_ct4mp")
+font_size = 45
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+outline_color = Color(0.8031282, 0.80312824, 0.8031281, 1)
+shadow_size = 7
+
+[node name="player" type="CharacterBody3D"]
+collision_layer = 2
+script = ExtResource("1_xo3ru")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4qnqm")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5596027, -0.11683428)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="Head/Camera3D"]
+shape = SubResource("SphereShape3D_xo3ru")
+target_position = Vector3(0, 0, -2)
+collision_mask = 5
+collide_with_areas = true
+
+[node name="UIControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 25.0
+offset_right = 4.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InteractContainer" type="Control" parent="UIControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UIControl/InteractContainer"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -53.0
+offset_top = 195.0
+offset_right = 53.0
+offset_bottom = 295.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="InteractLabel" type="Label" parent="UIControl/InteractContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "noting"
+label_settings = SubResource("LabelSettings_xo3ru")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoteControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="NoteControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.5
+offset_top = -313.0
+offset_right = 228.5
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fvtld")
+expand_mode = 1
+stretch_mode = 2
+flip_h = true
+
+[node name="TextLabel" type="Label" parent="NoteControl/TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -228.5
+offset_top = -313.0
+offset_right = 227.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You are in the first room and the door is locked.
+Look carefully at the walls and count the candle, book, box, and painting.
+Enter the numbers in this order to open the door."
+label_settings = SubResource("LabelSettings_fvtld")
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NoteControl"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = -18.0
+offset_right = 125.0
+offset_bottom = 82.0
+
+[node name="CloseLabel" type="Label" parent="NoteControl/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Close [E]"
+label_settings = SubResource("LabelSettings_xo3ru")
+horizontal_alignment = 1
+vertical_alignment = 1

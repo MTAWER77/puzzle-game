@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://of6tfg8t0c11"]
+
+[ext_resource type="Script" uid="uid://dag3vteiu22h2" path="res://scripts/latter.gd" id="1_bgjar"]
+[ext_resource type="Texture2D" uid="uid://ckxuwajq3jfhm" path="res://images/white-crumpled-paper-texture-background_1373-162.jpg" id="2_g55jb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g55jb"]
+size = Vector3(0.7505493, 0.18774414, 1.027832)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m0vtk"]
+albedo_texture = ExtResource("2_g55jb")
+
+[node name="Node3d" type="Node3D"]
+script = ExtResource("1_bgjar")
+note_contents = "You are in the first room and the door is locked.Look carefully at the walls and count the candle, book, box, and painting.Enter the numbers in this order to open the door."
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.009851098, 0)
+collision_layer = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035003662, -0.54265356, 0.013916016)
+shape = SubResource("BoxShape3D_g55jb")
+
+[node name="NoteMesh" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.039877146, -0.4995, 0.023612976)
+size = Vector3(0.7355957, 0.001, 0.99949646)
+material = SubResource("StandardMaterial3D_m0vtk")
